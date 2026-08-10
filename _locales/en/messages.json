@@ -1,0 +1,51 @@
+{
+    "extensionName": {
+      "message": "Auto Reload AADL"
+    },
+    "selectOrEditProfile": {
+      "message": "Select or Edit Profile"
+    },
+    "selectProfileToEdit": {
+      "message": "Select to edit a profile"
+    },
+    "enterProfileName": {
+      "message": "Enter profile name"
+    },
+    "saveProfile": {
+      "message": "Save Profile"
+    },
+    "deleteProfile": {
+      "message": "Delete Profile"
+    },
+    "fillSelectedProfile": {
+      "message": "Fill selected profile on page"
+    },
+    "wilayaResidence": {
+      "message": "ولاية الإقامة"
+    },
+    "enterNINNumber": {
+      "message": "Enter NIN Number"
+    },
+    "enterNSSNumber": {
+      "message": "Enter NSS Number"
+    },
+    "enterTelNumber": {
+      "message": "Enter No tel"
+    },
+    "start": {
+      "message": "Start"
+    },
+    "statusNotRunning": {
+      "message": "Status: Not Running"
+    },
+    "loading": {
+      "message": "LOADING"
+    },
+    "reloadingIn": {
+      "message": "RELOADING IN"
+    },
+    "reset": {
+      "message": "Reset"
+    }
+  }
+  

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Auto Reload AADL</title>
+  <title><span data-i18n="extensionName">Auto Reload AADL</span></title>
   <link href="bootstrap.min.css" rel="stylesheet">
   <link href="countdown.css" rel="stylesheet">
   <style>
@@ -53,56 +53,70 @@
       font-size: 12px;
       color: #888;
     }
-    .countdown-container1.reloading{
+
+    .countdown-container1.reloading {
       display: initial;
     }
-      .countdown-container1{
+
+    .countdown-container1 {
       display: none;
     }
-    .loader,.loader.reloading.running{
+
+    .loader, .loader.reloading.running {
       display: none;
     }
-    .loader.running{
+
+    .loader.running {
       display: block;
     }
+
     .reset-button {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  padding: 10px;
-  background-color: #FF5733;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  width: 82px;
-}
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      background-color: #FF5733;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      width: 82px;
+    }
 
-.reset-button:hover {
-  background-color: #E74C3C;
-}
+    .reset-button:hover {
+      background-color: #E74C3C;
+    }
 
-.reset-button i {
-  margin-right: 5px;
-}
-
-
+    .reset-button i {
+      margin-right: 5px;
+    }
   </style>
 </head>
-<body> 
-    <button id="resetButton" class="btn btn-custom reset-button">
-       <i class="fa fa-trash"></i> Reset
-    </button>
+<body>
+  <button id="resetButton" class="btn btn-custom reset-button">
+    <i class="fa fa-trash"></i> <span data-i18n="reset">Reset</span>
+  </button>
   <center>
     <img class="img" src="alg.png" style="height: 50px;">
   </center>
-  <h1>Auto Reload AADL</h1>
+  <h1 data-i18n="extensionName">Auto Reload AADL</h1>
   <form>
     <div class="form-group">
-      <label for="A17">ولاية الإقامة</label>
+      <label for="profileSelect" data-i18n="selectOrEditProfile">Select or Edit Profile</label>
+      <select id="profileSelect" class="form-control mb-3">
+        <option value="" selected data-i18n="selectProfileToEdit">Select to edit a profile</option>
+      </select>
+      <input type="text" id="profileName" class="form-control" placeholder="Enter profile name" data-i18n-placeholder="enterProfileName" style="margin-bottom: 10px;">
+      <button id="saveProfileButton" class="btn btn-custom" style="width: 125px;" data-i18n="saveProfile">Save Profile</button>
+      <button id="deleteProfileButton" class="btn btn-custom stop" style="width: 125px; float: right;" data-i18n="deleteProfile">Delete Profile</button>
+    </div>
+    <button type="button" id="fillFormButton" class="btn btn-custom" data-i18n="fillSelectedProfile">Fill selected profile on page</button>
+    <div class="form-group">
+      <label for="A17" data-i18n="wilayaResidence">ولاية الإقامة</label>
       <select name="A17" id="A17" class="form-control" title="الولاية المختارة عند التسجيل يجب أن تثبت بشهادة إقامة سارية المفعول">
         <option selected="" value="">----------</option>
+        <!-- Options should not be translated as they are specific locations -->
         <option value="2">1-أدرار</option>
         <option value="3">2-الشلف</option>
         <option value="4">3-الأغواط</option>
@@ -164,35 +178,35 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="nin">Enter NIN Number</label>
-      <input type="text" id="nin" class="form-control" placeholder="Enter NIN Number">
+      <label for="nin" data-i18n="enterNINNumber">Enter NIN Number</label>
+      <input type="text" id="nin" class="form-control" placeholder="Enter NIN Number" data-i18n-placeholder="enterNINNumber">
     </div>
     <div class="form-group">
-      <label for="nss">Enter NSS Number</label>
-      <input type="text" id="nss" class="form-control" placeholder="Enter NSS Number">
+      <label for="nss" data-i18n="enterNSSNumber">Enter NSS Number</label>
+      <input type="text" id="nss" class="form-control" placeholder="Enter NSS Number" data-i18n-placeholder="enterNSSNumber">
     </div>
     <div class="form-group">
-      <label for="tel">Enter No tel</label>
-      <input type="text" id="tel" class="form-control" placeholder="Enter No tel">
+      <label for="tel" data-i18n="enterTelNumber">Enter No tel</label>
+      <input type="text" id="tel" class="form-control" placeholder="Enter No tel" data-i18n-placeholder="enterTelNumber">
     </div>
-    <button id="toggleButton" class="btn btn-custom">Start</button>
-    <span id="status">Status: Not Running</span>
+    <button id="toggleButton" class="btn btn-custom" data-i18n="start">Start</button>
+    <span id="status" data-i18n="statusNotRunning">Status: Not Running</span>
   </form>
   <center class="loader">
-    <h3>LOADING</h3>
+    <h3 data-i18n="loading">LOADING</h3>
     <div class="lds-ripple"><div></div><div></div></div>
   </center>
   <center class="countdown-container1">
-    <h3>RELOADING IN</h3>
-  <div
-  class="countdown-container"
-  data-duration="10"
-  data-transition="linear"
-  data-color="#c39fe0"
-  data-size="200"
-  data-position="center"
-></div>
-</center>
+    <h3 data-i18n="reloadingIn">RELOADING IN</h3>
+    <div
+      class="countdown-container"
+      data-duration="10"
+      data-transition="linear"
+      data-color="#c39fe0"
+      data-size="200"
+      data-position="center"
+    ></div>
+  </center>
   <script src="countdown.min.js"></script>
   <script src="sidepanel.js"></script>
 </body>

@@ -78,3 +78,10 @@ document.body.removeAttribute('oncopy');
 document.body.removeAttribute('oncut');
 document.body.removeAttribute('onpaste');
 
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "fillForm") {
+    fillForm();
+    sendResponse({ success: true });
+  }
+  return true;
+});

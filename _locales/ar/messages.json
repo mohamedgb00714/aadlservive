@@ -1,0 +1,51 @@
+{
+    "extensionName": {
+      "message": "إعادة تحميل AADL تلقائيًا"
+    },
+    "selectOrEditProfile": {
+      "message": "اختر أو عدل الملف الشخصي"
+    },
+    "selectProfileToEdit": {
+      "message": "اختر لتعديل الملف الشخصي"
+    },
+    "enterProfileName": {
+      "message": "أدخل اسم الملف الشخصي"
+    },
+    "saveProfile": {
+      "message": "حفظ الملف الشخصي"
+    },
+    "deleteProfile": {
+      "message": "حذف الملف الشخصي"
+    },
+    "fillSelectedProfile": {
+      "message": "املأ الملف الشخصي المحدد على الصفحة"
+    },
+    "wilayaResidence": {
+      "message": "ولاية الإقامة"
+    },
+    "enterNINNumber": {
+      "message": "أدخل رقم NIN"
+    },
+    "enterNSSNumber": {
+      "message": "أدخل رقم NSS"
+    },
+    "enterTelNumber": {
+      "message": "أدخل رقم الهاتف"
+    },
+    "start": {
+      "message": "ابدأ"
+    },
+    "statusNotRunning": {
+      "message": "الحالة: غير شغال"
+    },
+    "loading": {
+      "message": "جارٍ التحميل"
+    },
+    "reloadingIn": {
+      "message": "إعادة التحميل في"
+    },
+    "reset": {
+      "message": "إعادة تعيين"
+    }
+  }
+  
