@@ -1,0 +1,51 @@
+{
+    "extensionName": {
+      "message": "Recharge Auto AADL"
+    },
+    "selectOrEditProfile": {
+      "message": "Sélectionner ou modifier le profil"
+    },
+    "selectProfileToEdit": {
+      "message": "Sélectionnez pour modifier un profil"
+    },
+    "enterProfileName": {
+      "message": "Entrez le nom du profil"
+    },
+    "saveProfile": {
+      "message": "Enregistrer le profil"
+    },
+    "deleteProfile": {
+      "message": "Supprimer le profil"
+    },
+    "fillSelectedProfile": {
+      "message": "Remplir le profil sélectionné sur la page"
+    },
+    "wilayaResidence": {
+      "message": "ولاية الإقامة"
+    },
+    "enterNINNumber": {
+      "message": "Entrez le numéro NIN"
+    },
+    "enterNSSNumber": {
+      "message": "Entrez le numéro NSS"
+    },
+    "enterTelNumber": {
+      "message": "Entrez le numéro de téléphone"
+    },
+    "start": {
+      "message": "Démarrer"
+    },
+    "statusNotRunning": {
+      "message": "Statut : Non en cours d'exécution"
+    },
+    "loading": {
+      "message": "CHARGEMENT"
+    },
+    "reloadingIn": {
+      "message": "RECHARGEMENT DANS"
+    },
+    "reset": {
+      "message": "Réinitialiser"
+    }
+  }
+  

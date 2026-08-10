@@ -25,7 +25,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     sendResponse({ success: true });
   } else if (message.action === "stopAutoReload") {
     stopAutoReload();
-    chrome.notifications.create(
+   browser.notifications.create(
       {
         type: "basic",
         iconUrl: "AADL_logo.png", // Replace with the path to your extension's icon
@@ -48,7 +48,7 @@ function startAutoReload(force=false) {
     autoReloadIntervalId = setInterval(() => {
       updateBadge();
     }, 1000); // Check every second;
-    // chrome.alarms.create("checkWebsite", { periodInMinutes: checkInterval / 60 });
+    //browser.alarms.create("checkWebsite", { periodInMinutes: checkInterval / 60 });
     checkWebsiteStatus(force);
     updateBadge();
     isRunning = true;
@@ -67,11 +67,11 @@ function stopAutoReload() {
 }
 
 function saveAutoReloadStatus(status) {
-  chrome.storage.local.set({ autoReloadRunning: status }, () => {
+ browser.storage.local.set({ autoReloadRunning: status }, () => {
     if (chrome.runtime.lastError) {
       console.error(
         "Error saving auto reload status:",
-        chrome.runtime.lastError
+       browser.runtime.lastError
       );
     } else {
       console.log("Auto reload status saved successfully.");
@@ -80,9 +80,9 @@ function saveAutoReloadStatus(status) {
 }
 
 function updateBadge() {
-  chrome.action.setBadgeText({ text: isRunning ? countdown.toString() : "" });
+ browser.action.setBadgeText({ text: isRunning ? countdown.toString() : "" });
   if (isRunning)
-    chrome.action.setBadgeBackgroundColor({
+   browser.action.setBadgeBackgroundColor({
       color: isRunning ? "#FF0000" : "",
     });
 
@@ -116,7 +116,7 @@ chrome.webNavigation.onErrorOccurred.addListener(
         countdown = checkInterval;
         reloadTab(details.tabId);
       }, 10000);
-      chrome.runtime.sendMessage({ action: "countdownrestart" });
+     browser.runtime.sendMessage({ action: "countdownrestart" });
     } 
     } else {
       console.log("This is a nested frame (iframe) within the webpage.");
@@ -130,7 +130,7 @@ chrome.webNavigation.onErrorOccurred.addListener(
 function checkWebsiteStatus(force=false) {
  
   console.log("Checking website status...");
-  chrome.tabs.query({ url: targetUrl + "*" }, (tabs) => {
+ browser.tabs.query({ url: targetUrl + "*" }, (tabs) => {
     if (tabs.length > 0) {
       tabs.forEach((tab) => {
         console.log(tab);
@@ -143,14 +143,14 @@ function checkWebsiteStatus(force=false) {
       });
     } else {
       console.log("No tabs found with the target URL.");
-      chrome.tabs.create({ url: "https://aadl3inscription2024.dz/AR/Inscription-desktop.php" });
+     browser.tabs.create({ url: "https://aadl3inscription2024.dz/AR/Inscription-desktop.php" });
     }
   });
 }
 
 function reloadTab(tabId) {
   if (isRunning)
-    chrome.tabs.reload(tabId, { bypassCache: true }, () => {
+   browser.tabs.reload(tabId, { bypassCache: true }, () => {
       console.log(`Tab ${tabId} reloaded.`);
     });
 }

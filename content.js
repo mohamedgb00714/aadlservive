@@ -2,7 +2,7 @@
 
 const getStoredValues = () => {
     return new Promise((resolve, reject) => {
-      chrome.storage.local.get(['A17', 'nin', 'nss', 'tel'], (data) => {
+     browser.storage.local.get(['A17', 'nin', 'nss', 'tel'], (data) => {
         if (chrome.runtime.lastError) {
           reject(chrome.runtime.lastError);
         } else {
@@ -36,7 +36,7 @@ const getStoredValues = () => {
   
   // Function to check auto-reload status and stop reloading if necessary
   const checkAutoReloadStatus = () => {
-    chrome.runtime.sendMessage({ action: "getAutoReloadStatus" }, (response) => {
+   browser.runtime.sendMessage({ action: "getAutoReloadStatus" }, (response) => {
       const { isRunning } = response;
       if (isRunning) {
         stopAutoReload();
@@ -56,7 +56,7 @@ const getStoredValues = () => {
   
   // Start observing the document body for changes
   observer.observe(document.body, { childList: true, subtree: true });function stopAutoReload() {
-    chrome.runtime.sendMessage({ action: "stopAutoReload" }, (res) => {
+   browser.runtime.sendMessage({ action: "stopAutoReload" }, (res) => {
       console.log(res);
   
       // Create a notification to inform the user that auto-reload has stopped
@@ -78,3 +78,10 @@ document.body.removeAttribute('oncopy');
 document.body.removeAttribute('oncut');
 document.body.removeAttribute('onpaste');
 
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "fillForm") {
+    fillForm();
+    sendResponse({ success: true });
+  }
+  return true;
+});
